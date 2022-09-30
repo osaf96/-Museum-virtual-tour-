@@ -48,9 +48,9 @@ body
     font-size: 2rem;
   }
 progress::-webkit-progress-value {
-    background: #964B00 !important;
-    border-radius: 12px;
+    background: #fff !important;
+    border-radius: 8px;
   }
   progress {
-    background-color: #964B00;
+    background-color: #FFF;
   }
