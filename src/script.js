@@ -7,10 +7,16 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { FirstPersonControls } from 'three/examples/jsm/controls/FirstPersonControls.js'
 import { FlyControls } from 'three/examples/jsm/controls/FlyControls'
 
+
+
+
+const Click = document.getElementById('click')
+const welcome = document.getElementById('welcome')
+const details = document.getElementById('details')
 /**
  * Base
  */
-// Debug
+// D = ebug
 const gui = new dat.GUI()
 
 // Canvas
@@ -62,33 +68,58 @@ gltfloader.load(
         //     console.log(camera.position)
         // })
 
+        // window.addEventListener('scroll', () => {
+        //     scrollY = window.scrollY
+        //     const newSection = Math.round(scrollY / sizes.height)
+
+        //     if (newSection != currentSection) {
+
+        //         gsap.to(camera.position, {
+        //             x: 3,
+        //             y: 2,
+        //             z: 3,
+        //             duration: 3
+        //         })
+
+        //     }
+        // })
+        Click.innerHTML = "<span>click on page</span>"
+        welcome.innerHTML = " <h2>Welcome to The Hallwyl Museum in Stockholm, Sweden.</h2>"
         window.addEventListener('mouseup', () => {
-            console.log(camera.position)
+
             switch (position) {
                 case 0:
 
                     moveCamera(3, 1.7, -3)
                     cameraRotation(3, 1.7, -3)
                     position = 1
-
+                    welcome.innerHTML = " <h2>Table and Seat Furniture</h2>"
+                    details.innerHTML = "<p>Table from the late 17th century, made of guilt wood with a top of Swedish green marble. Inventory number: VI:I:A.a.27.The seat furniture is Swedish and dates from the mid-18th century, but it was reupholstered and gilded in the 1890s.Inventory number: VI:II:A.a.10. </p>"
+                    Click.innerHTML = '<span>click on page</span>'
                     break;
                 case 1:
                     moveCamera(0.01757213, 0.746, .01568316)
                     cameraRotation(0.3218, 0.77016, -0.2281)
                     position = 2
+                    welcome.innerHTML = " <h2>“Prometheus Brings Fire To Mankind”<h2>"
+                    details.innerHTML = "<p>This relief over the mantelpiece in Carrara marble was made by the sculptor Gusten Lindberg.  Inventory number: LV:II:B.a.01. </p>"
+                    Click.innerHTML = '<span>click on page</span>'
 
                     break;
                 case 2:
                     moveCamera(-0.00445, 0.5, 0.0000052257568)
                     cameraRotation(0.0942058, -0.0512, 0.061141577)
                     position = 3
-
+                    welcome.innerHTML = " <h2>“An Open-air concert”<h2>"
+                    details.innerHTML = "<p>This ceiling painting, by Julius Kronberg alludes to the musical function of the room. Inventory number: XXXII:A.b.02.</p>"
                     break;
                 case 3:
                     moveCamera(-0.269, 0.77, 0.281)
                     cameraRotation(-9.1504, -0.64, -9.10222574)
                     position = 4
-
+                    welcome.innerHTML = " <h2>Cabinet<h2>"
+                    details.innerHTML = "<p>his guilded and richly ornamented cabinet was made in Italy in the 1770s. It was originally owned by Pope Pius VI. His crest adorns the top of the cabinet. Parts of Wilhelmina von Hallwyl’s collection of Asian ceramics are displayed in the cabinet. The main part of this collection is kept in the China room on the second floor. Inventory number:VI:I:I.d.d.07.</p>"
+                    Click.innerHTML = '<span>The End</span>'
                     break;
                 default:
                     break;
