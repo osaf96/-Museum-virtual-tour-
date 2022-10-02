@@ -1,7 +1,7 @@
 import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import * as dat from 'lil-gui'
+// import * as dat from 'lil-gui'
 import gsap from 'gsap'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { FirstPersonControls } from 'three/examples/jsm/controls/FirstPersonControls.js'
@@ -17,7 +17,7 @@ const details = document.getElementById('details')
  * Base
  */
 // D = ebug
-const gui = new dat.GUI()
+// const gui = new dat.GUI()
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -63,26 +63,6 @@ gltfloader.load(
 
         //  gsap animation
 
-        // gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
-        // window.addEventListener('mouseup', () => {
-        //     console.log(camera.position)
-        // })
-
-        // window.addEventListener('scroll', () => {
-        //     scrollY = window.scrollY
-        //     const newSection = Math.round(scrollY / sizes.height)
-
-        //     if (newSection != currentSection) {
-
-        //         gsap.to(camera.position, {
-        //             x: 3,
-        //             y: 2,
-        //             z: 3,
-        //             duration: 3
-        //         })
-
-        //     }
-        // })
         Click.innerHTML = "<span>click on page</span>"
         welcome.innerHTML = " <h2>Welcome to The Hallwyl Museum in Stockholm, Sweden.</h2>"
         window.addEventListener('mouseup', () => {
@@ -118,7 +98,15 @@ gltfloader.load(
                     cameraRotation(-9.1504, -0.64, -9.10222574)
                     position = 4
                     welcome.innerHTML = " <h2>Cabinet<h2>"
-                    details.innerHTML = "<p>his guilded and richly ornamented cabinet was made in Italy in the 1770s. It was originally owned by Pope Pius VI. His crest adorns the top of the cabinet. Parts of Wilhelmina von Hallwyl’s collection of Asian ceramics are displayed in the cabinet. The main part of this collection is kept in the China room on the second floor. Inventory number:VI:I:I.d.d.07.</p>"
+                    details.innerHTML = "<p>This guilded and richly ornamented cabinet was made in Italy in the 1770s. It was originally owned by Pope Pius VI. His crest adorns the top of the cabinet. Parts of Wilhelmina von Hallwyl’s collection of Asian ceramics are displayed in the cabinet. The main part of this collection is kept in the China room on the second floor. Inventory number:VI:I:I.d.d.07.</p>"
+                    Click.innerHTML = '<span>click on page</span>'
+                    break;
+                case 4:
+                    moveCamera(-0.11788, 1.176, -1.283224)
+                    cameraRotation(-2.820651, -0.086964, -3.11714)
+                    position = 5
+                    welcome.innerHTML = " <h2>The Grand Piano<h2>"
+                    details.innerHTML = "<p>This Steinway Grand Piano was delivered in 1896 with a relatively simple, brown pear wood case. The architect, Isak Gustaf Clason, was asked to design a new case in a Baroque-inspired style, more in keeping with the decoration of the room.The instrument, which is unique of its kind, was restored in 1990 and is kept in concert pitch.Inventory number:VI:I:C.a.01.</p>"
                     Click.innerHTML = '<span>The End</span>'
                     break;
                 default:
@@ -169,20 +157,6 @@ gltfloader.load(
 )
 
 
-/**
- * Floor
- */
-const floor = new THREE.Mesh(
-    new THREE.PlaneGeometry(10, 10),
-    new THREE.MeshStandardMaterial({
-        color: '#444444',
-        metalness: 0,
-        roughness: 0.5
-    })
-)
-floor.receiveShadow = true
-floor.rotation.x = - Math.PI * 0.5
-// scene.add(floor)
 
 /**
  * Lights
@@ -289,8 +263,8 @@ const tick = () => {
 
     // Call tick again on the next frame
     window.requestAnimationFrame(tick)
-    // console.log(camera.position)
-    // console.log(camera.rotation)
+    console.log(camera.position)
+    console.log(camera.rotation)
 }
 
 tick()

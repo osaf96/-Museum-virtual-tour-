@@ -5,7 +5,7 @@ Model Information:
 
 Model License:
 * license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
-* requirements:	Author must be credited. Commercial use is allowed.
+* requirements:	 Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
 This work is based on "The Great Drawing Room" (https://sketchfab.com/3d-models/the-great-drawing-room-feb9ad17e042418c8e759b81e3b2e5d7) by The Hallwyl Museum (Hallwylska museet) (https://sketchfab.com/TheHallwylMuseum) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
