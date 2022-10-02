@@ -4,8 +4,6 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 // import * as dat from 'lil-gui'
 import gsap from 'gsap'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-import { FirstPersonControls } from 'three/examples/jsm/controls/FirstPersonControls.js'
-import { FlyControls } from 'three/examples/jsm/controls/FlyControls'
 
 
 
@@ -115,8 +113,6 @@ gltfloader.load(
         })
 
 
-        // moveCamera(-0.00445, 0.5, 0.000052257568)
-        // cameraRotation(0.0942058, -0.0512, 0.061141577)
 
         function moveCamera(x, y, z) {
             gsap.to(camera.position, {
@@ -226,20 +222,6 @@ renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
 
-
-// Firstpersone controls
-// const controls = new FirstPersonControls(camera, renderer.domElement)
-// controls.movementSpeed = 7
-// controls.lookSpeed = 0.005
-// controls.mouseDragOn = true
-
-// const controls = new FirstPersonControls(camera, renderer.domElement);
-// controls.movementSpeed = 8;
-// controls.lookSpeed = 0.08;
-
-// const controls = new FlyControls(camera, renderer.domElement)
-// controls.movementSpeed = 1
-
 /**
  * Animate
  */
@@ -263,8 +245,8 @@ const tick = () => {
 
     // Call tick again on the next frame
     window.requestAnimationFrame(tick)
-    console.log(camera.position)
-    console.log(camera.rotation)
+    // console.log(camera.position)
+    // console.log(camera.rotation)
 }
 
 tick()
