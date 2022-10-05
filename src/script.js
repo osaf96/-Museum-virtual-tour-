@@ -105,6 +105,14 @@ gltfloader.load(
                     position = 5
                     welcome.innerHTML = " <h2>The Grand Piano<h2>"
                     details.innerHTML = "<p>This Steinway Grand Piano was delivered in 1896 with a relatively simple, brown pear wood case. The architect, Isak Gustaf Clason, was asked to design a new case in a Baroque-inspired style, more in keeping with the decoration of the room.The instrument, which is unique of its kind, was restored in 1990 and is kept in concert pitch.Inventory number:VI:I:C.a.01.</p>"
+                    Click.innerHTML = '<span>click on page</span>'
+                    break;
+                case 5:
+                    moveCamera(0.01757213, .756, .01568316)
+                    cameraRotation(0.3218, 0.77016, -0.2281)
+                    position = 6
+                    welcome.innerHTML = " <h2>The Fire Place<h2>"
+                    details.innerHTML = "<p>The fireplace has a Belgian marble surround. The fireplaces in the house never in fact had a practical use, as a modern central heating system with hot air was installed when the house was built. The purpose of the fireplaces is instead to reflect the different historical styles of the rooms.</p>"
                     Click.innerHTML = '<span>The End</span>'
                     break;
                 default:
@@ -245,8 +253,8 @@ const tick = () => {
 
     // Call tick again on the next frame
     window.requestAnimationFrame(tick)
-    // console.log(camera.position)
-    // console.log(camera.rotation)
+    console.log(camera.position)
+    console.log(camera.rotation)
 }
 
 tick()
