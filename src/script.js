@@ -4,7 +4,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 // import * as dat from 'lil-gui'
 import gsap from 'gsap'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-import { ARButton } from 'three/examples/jsm/webxr/ARButton.js'
+// import { ARButton } from 'three/examples/jsm/webxr/ARButton.js'
 
 
 
@@ -230,7 +230,9 @@ renderer.shadowMap.enabled = true
 renderer.shadowMap.type = THREE.PCFSoftShadowMap
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-renderer.xr.enabled = true
+// renderer.xr.enabled = true
+
+
 
 const button = ARButton.createButton(renderer)
 document.body.appendChild(button)
@@ -262,3 +264,6 @@ const tick = () => {
 }
 
 tick()
+
+
+
